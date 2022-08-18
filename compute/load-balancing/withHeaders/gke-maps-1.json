@@ -1,0 +1,51 @@
+{
+  "name": "gke-maps",
+  "description": "Description",
+  "defaultService": "https://www.googleapis.com/compute/v1/projects/ops-moegui-com/global/backendBuckets/backend-bucket-services",
+  "hostRules": [
+    {
+      "description": "Description",
+      "hosts": ["api.fbc.com"],
+      "pathMatcher": "pmatch1"
+    }
+  ],
+  "pathMatchers": [
+    {
+      "name": "pmatch1",
+      "description": "Description",
+      "defaultService": "/dev/null",
+      "routeRules": [
+        {
+          "priority": 0,
+          "description": "Description",
+          "matchRules": [
+            {
+              "headerMatches": [
+                {
+                  "headerName": "FBC-X-Access",
+                  "exactMatch": "d92db838b051ea30e25f63f799502761"
+                }
+              ]
+            }
+          ],
+          "service": "https://www.googleapis.com/compute/v1/projects/ops-moegui-com/global/backendBuckets/backend-bucket-dev"
+        },
+        {
+          "priority": 1,
+          "description": "Description",
+          "matchRules": [
+            {
+              "headerMatches": [
+                {
+                  "headerName": "FBC-X-Access",
+                  "exactMatch": "e17804e868c441275b5e84f2e4dbe31c9caad504"
+                }
+              ]
+            }
+          ],
+          "service": "https://www.googleapis.com/compute/v1/projects/ops-moegui-com/global/backendBuckets/backend-bucket-pro"
+        }        
+      ]
+    }
+  ]
+}
