@@ -1,0 +1,550 @@
+{
+  "kind": string,
+  "id": string,
+  "creationTimestamp": string,
+  "name": string,
+  "description": string,
+  "selfLink": string,
+  "hostRules": [
+    {
+      "description": string,
+      "hosts": [
+        string
+      ],
+      "pathMatcher": string
+    }
+  ],
+  "pathMatchers": [
+    {
+      "name": string,
+      "description": string,
+      "defaultService": string,
+      "defaultRouteAction": {
+        "weightedBackendServices": [
+          {
+            "backendService": string,
+            "weight": integer,
+            "headerAction": {
+              "requestHeadersToRemove": [
+                string
+              ],
+              "requestHeadersToAdd": [
+                {
+                  "headerName": string,
+                  "headerValue": string,
+                  "replace": boolean
+                }
+              ],
+              "responseHeadersToRemove": [
+                string
+              ],
+              "responseHeadersToAdd": [
+                {
+                  "headerName": string,
+                  "headerValue": string,
+                  "replace": boolean
+                }
+              ]
+            }
+          }
+        ],
+        "urlRewrite": {
+          "pathPrefixRewrite": string,
+          "hostRewrite": string
+        },
+        "timeout": {
+          "seconds": string,
+          "nanos": integer
+        },
+        "retryPolicy": {
+          "retryConditions": [
+            string
+          ],
+          "numRetries": integer,
+          "perTryTimeout": {
+            "seconds": string,
+            "nanos": integer
+          }
+        },
+        "requestMirrorPolicy": {
+          "backendService": string
+        },
+        "corsPolicy": {
+          "allowOrigins": [
+            string
+          ],
+          "allowOriginRegexes": [
+            string
+          ],
+          "allowMethods": [
+            string
+          ],
+          "allowHeaders": [
+            string
+          ],
+          "exposeHeaders": [
+            string
+          ],
+          "maxAge": integer,
+          "allowCredentials": boolean,
+          "disabled": boolean
+        },
+        "faultInjectionPolicy": {
+          "delay": {
+            "fixedDelay": {
+              "seconds": string,
+              "nanos": integer
+            },
+            "percentage": number
+          },
+          "abort": {
+            "httpStatus": integer,
+            "percentage": number
+          }
+        },
+        "maxStreamDuration": {
+          "seconds": string,
+          "nanos": integer
+        }
+      },
+      "defaultUrlRedirect": {
+        "hostRedirect": string,
+        "pathRedirect": string,
+        "prefixRedirect": string,
+        "redirectResponseCode": enum,
+        "httpsRedirect": boolean,
+        "stripQuery": boolean
+      },
+      "pathRules": [
+        {
+          "service": string,
+          "routeAction": {
+            "weightedBackendServices": [
+              {
+                "backendService": string,
+                "weight": integer,
+                "headerAction": {
+                  "requestHeadersToRemove": [
+                    string
+                  ],
+                  "requestHeadersToAdd": [
+                    {
+                      "headerName": string,
+                      "headerValue": string,
+                      "replace": boolean
+                    }
+                  ],
+                  "responseHeadersToRemove": [
+                    string
+                  ],
+                  "responseHeadersToAdd": [
+                    {
+                      "headerName": string,
+                      "headerValue": string,
+                      "replace": boolean
+                    }
+                  ]
+                }
+              }
+            ],
+            "urlRewrite": {
+              "pathPrefixRewrite": string,
+              "hostRewrite": string
+            },
+            "timeout": {
+              "seconds": string,
+              "nanos": integer
+            },
+            "retryPolicy": {
+              "retryConditions": [
+                string
+              ],
+              "numRetries": integer,
+              "perTryTimeout": {
+                "seconds": string,
+                "nanos": integer
+              }
+            },
+            "requestMirrorPolicy": {
+              "backendService": string
+            },
+            "corsPolicy": {
+              "allowOrigins": [
+                string
+              ],
+              "allowOriginRegexes": [
+                string
+              ],
+              "allowMethods": [
+                string
+              ],
+              "allowHeaders": [
+                string
+              ],
+              "exposeHeaders": [
+                string
+              ],
+              "maxAge": integer,
+              "allowCredentials": boolean,
+              "disabled": boolean
+            },
+            "faultInjectionPolicy": {
+              "delay": {
+                "fixedDelay": {
+                  "seconds": string,
+                  "nanos": integer
+                },
+                "percentage": number
+              },
+              "abort": {
+                "httpStatus": integer,
+                "percentage": number
+              }
+            },
+            "maxStreamDuration": {
+              "seconds": string,
+              "nanos": integer
+            }
+          },
+          "urlRedirect": {
+            "hostRedirect": string,
+            "pathRedirect": string,
+            "prefixRedirect": string,
+            "redirectResponseCode": enum,
+            "httpsRedirect": boolean,
+            "stripQuery": boolean
+          },
+          "paths": [
+            string
+          ]
+        }
+      ],
+      "routeRules": [
+        {
+          "priority": integer,
+          "description": string,
+          "matchRules": [
+            {
+              "prefixMatch": string,
+              "fullPathMatch": string,
+              "regexMatch": string,
+              "ignoreCase": boolean,
+              "headerMatches": [
+                {
+                  "headerName": string,
+                  "exactMatch": string,
+                  "regexMatch": string,
+                  "rangeMatch": {
+                    "rangeStart": string,
+                    "rangeEnd": string
+                  },
+                  "presentMatch": boolean,
+                  "prefixMatch": string,
+                  "suffixMatch": string,
+                  "invertMatch": boolean
+                }
+              ],
+              "queryParameterMatches": [
+                {
+                  "name": string,
+                  "presentMatch": boolean,
+                  "exactMatch": string,
+                  "regexMatch": string
+                }
+              ],
+              "metadataFilters": [
+                {
+                  "filterMatchCriteria": enum,
+                  "filterLabels": [
+                    {
+                      "name": string,
+                      "value": string
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "service": string,
+          "routeAction": {
+            "weightedBackendServices": [
+              {
+                "backendService": string,
+                "weight": integer,
+                "headerAction": {
+                  "requestHeadersToRemove": [
+                    string
+                  ],
+                  "requestHeadersToAdd": [
+                    {
+                      "headerName": string,
+                      "headerValue": string,
+                      "replace": boolean
+                    }
+                  ],
+                  "responseHeadersToRemove": [
+                    string
+                  ],
+                  "responseHeadersToAdd": [
+                    {
+                      "headerName": string,
+                      "headerValue": string,
+                      "replace": boolean
+                    }
+                  ]
+                }
+              }
+            ],
+            "urlRewrite": {
+              "pathPrefixRewrite": string,
+              "hostRewrite": string
+            },
+            "timeout": {
+              "seconds": string,
+              "nanos": integer
+            },
+            "retryPolicy": {
+              "retryConditions": [
+                string
+              ],
+              "numRetries": integer,
+              "perTryTimeout": {
+                "seconds": string,
+                "nanos": integer
+              }
+            },
+            "requestMirrorPolicy": {
+              "backendService": string
+            },
+            "corsPolicy": {
+              "allowOrigins": [
+                string
+              ],
+              "allowOriginRegexes": [
+                string
+              ],
+              "allowMethods": [
+                string
+              ],
+              "allowHeaders": [
+                string
+              ],
+              "exposeHeaders": [
+                string
+              ],
+              "maxAge": integer,
+              "allowCredentials": boolean,
+              "disabled": boolean
+            },
+            "faultInjectionPolicy": {
+              "delay": {
+                "fixedDelay": {
+                  "seconds": string,
+                  "nanos": integer
+                },
+                "percentage": number
+              },
+              "abort": {
+                "httpStatus": integer,
+                "percentage": number
+              }
+            },
+            "maxStreamDuration": {
+              "seconds": string,
+              "nanos": integer
+            }
+          },
+          "urlRedirect": {
+            "hostRedirect": string,
+            "pathRedirect": string,
+            "prefixRedirect": string,
+            "redirectResponseCode": enum,
+            "httpsRedirect": boolean,
+            "stripQuery": boolean
+          },
+          "headerAction": {
+            "requestHeadersToRemove": [
+              string
+            ],
+            "requestHeadersToAdd": [
+              {
+                "headerName": string,
+                "headerValue": string,
+                "replace": boolean
+              }
+            ],
+            "responseHeadersToRemove": [
+              string
+            ],
+            "responseHeadersToAdd": [
+              {
+                "headerName": string,
+                "headerValue": string,
+                "replace": boolean
+              }
+            ]
+          }
+        }
+      ],
+      "headerAction": {
+        "requestHeadersToRemove": [
+          string
+        ],
+        "requestHeadersToAdd": [
+          {
+            "headerName": string,
+            "headerValue": string,
+            "replace": boolean
+          }
+        ],
+        "responseHeadersToRemove": [
+          string
+        ],
+        "responseHeadersToAdd": [
+          {
+            "headerName": string,
+            "headerValue": string,
+            "replace": boolean
+          }
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "description": string,
+      "host": string,
+      "path": string,
+      "headers": [
+        {
+          "name": string,
+          "value": string
+        }
+      ],
+      "service": string,
+      "expectedOutputUrl": string,
+      "expectedRedirectResponseCode": integer
+    }
+  ],
+  "defaultService": string,
+  "defaultRouteAction": {
+    "weightedBackendServices": [
+      {
+        "backendService": string,
+        "weight": integer,
+        "headerAction": {
+          "requestHeadersToRemove": [
+            string
+          ],
+          "requestHeadersToAdd": [
+            {
+              "headerName": string,
+              "headerValue": string,
+              "replace": boolean
+            }
+          ],
+          "responseHeadersToRemove": [
+            string
+          ],
+          "responseHeadersToAdd": [
+            {
+              "headerName": string,
+              "headerValue": string,
+              "replace": boolean
+            }
+          ]
+        }
+      }
+    ],
+    "urlRewrite": {
+      "pathPrefixRewrite": string,
+      "hostRewrite": string
+    },
+    "timeout": {
+      "seconds": string,
+      "nanos": integer
+    },
+    "retryPolicy": {
+      "retryConditions": [
+        string
+      ],
+      "numRetries": integer,
+      "perTryTimeout": {
+        "seconds": string,
+        "nanos": integer
+      }
+    },
+    "requestMirrorPolicy": {
+      "backendService": string
+    },
+    "corsPolicy": {
+      "allowOrigins": [
+        string
+      ],
+      "allowOriginRegexes": [
+        string
+      ],
+      "allowMethods": [
+        string
+      ],
+      "allowHeaders": [
+        string
+      ],
+      "exposeHeaders": [
+        string
+      ],
+      "maxAge": integer,
+      "allowCredentials": boolean,
+      "disabled": boolean
+    },
+    "faultInjectionPolicy": {
+      "delay": {
+        "fixedDelay": {
+          "seconds": string,
+          "nanos": integer
+        },
+        "percentage": number
+      },
+      "abort": {
+        "httpStatus": integer,
+        "percentage": number
+      }
+    },
+    "maxStreamDuration": {
+      "seconds": string,
+      "nanos": integer
+    }
+  },
+  "defaultUrlRedirect": {
+    "hostRedirect": string,
+    "pathRedirect": string,
+    "prefixRedirect": string,
+    "redirectResponseCode": enum,
+    "httpsRedirect": boolean,
+    "stripQuery": boolean
+  },
+  "headerAction": {
+    "requestHeadersToRemove": [
+      string
+    ],
+    "requestHeadersToAdd": [
+      {
+        "headerName": string,
+        "headerValue": string,
+        "replace": boolean
+      }
+    ],
+    "responseHeadersToRemove": [
+      string
+    ],
+    "responseHeadersToAdd": [
+      {
+        "headerName": string,
+        "headerValue": string,
+        "replace": boolean
+      }
+    ]
+  },
+  "fingerprint": string,
+  "region": string
+}
